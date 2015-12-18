@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@import HealthKit;
 
 @interface ViewController : UIViewController
 
-
+@property (strong, nonatomic) HKHealthStore *healthManager;
 @end
 

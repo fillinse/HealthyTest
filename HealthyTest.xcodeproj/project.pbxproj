@@ -14,6 +14,7 @@
 		9314006B1C23FD7D004FF769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9314006A1C23FD7D004FF769 /* Assets.xcassets */; };
 		9314006E1C23FD7D004FF769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9314006C1C23FD7D004FF769 /* LaunchScreen.storyboard */; };
 		931400791C23FD7D004FF769 /* HealthyTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 931400781C23FD7D004FF769 /* HealthyTestTests.m */; };
+		931400841C23FD96004FF769 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931400831C23FD96004FF769 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		931400741C23FD7D004FF769 /* HealthyTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		931400781C23FD7D004FF769 /* HealthyTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthyTestTests.m; sourceTree = "<group>"; };
 		9314007A1C23FD7D004FF769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		931400831C23FD96004FF769 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		931400851C23FD96004FF769 /* HealthyTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthyTest.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931400841C23FD96004FF769 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 		931400521C23FD7D004FF769 = {
 			isa = PBXGroup;
 			children = (
+				931400831C23FD96004FF769 /* HealthKit.framework */,
 				9314005D1C23FD7D004FF769 /* HealthyTest */,
 				931400771C23FD7D004FF769 /* HealthyTestTests */,
 				9314005C1C23FD7D004FF769 /* Products */,
@@ -81,6 +86,7 @@
 		9314005D1C23FD7D004FF769 /* HealthyTest */ = {
 			isa = PBXGroup;
 			children = (
+				931400851C23FD96004FF769 /* HealthyTest.entitlements */,
 				931400611C23FD7D004FF769 /* AppDelegate.h */,
 				931400621C23FD7D004FF769 /* AppDelegate.m */,
 				931400641C23FD7D004FF769 /* ViewController.h */,
@@ -160,6 +166,12 @@
 				TargetAttributes = {
 					9314005A1C23FD7D004FF769 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = C8U29Y8XS5;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					931400731C23FD7D004FF769 = {
 						CreatedOnToolsVersion = 7.1;
@@ -339,10 +351,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthyTest/HealthyTest.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthyTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fillinse.HealthyTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -350,10 +366,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthyTest/HealthyTest.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthyTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fillinse.HealthyTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
